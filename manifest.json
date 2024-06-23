@@ -1,0 +1,60 @@
+{
+	"manifest_version": 3,
+	"minimum_chrome_version": "112",
+	"offline_enabled": true,
+	"default_locale": "en",
+	"name": "__MSG_extName__",
+	"short_name": "sideYT",
+	"description": "__MSG_extDescription__",
+	"version": "0.0.1",
+	"author": "WebRail",
+	"icons": {
+		"128": "icon-128.png",
+		"24": "icon-24.png"
+	},
+
+	"action": {
+		"default_title": "open Youtube (Alt + V)"
+	},
+
+	"side_panel": {
+		"default_path": "panel/index.html"
+	},
+
+	"background": {
+		"service_worker": "background/background.js",
+		"type": "module"
+	},
+
+	"content_scripts": [
+		{
+			"matches": ["https://m.youtube.com/*"],
+			"css": ["panel/style.css"],
+			"all_frames": true
+		}
+	],
+
+	"commands": {
+		"_execute_action": {
+			"suggested_key": {
+				"default": "Alt+V",
+				"windows": "Alt+V",
+				"mac": "Alt+V",
+				"linux": "Alt+V"
+			}
+		}
+	},
+
+	"declarative_net_request": {
+		"rule_resources": [
+			{
+				"id": "ig_frame_rule",
+				"enabled": true,
+				"path": "net_request.json"
+			}
+		]
+	},
+
+	"permissions": ["declarativeNetRequestWithHostAccess", "sidePanel", "storage"],
+	"host_permissions": ["https://*.youtube.com/*"]
+}

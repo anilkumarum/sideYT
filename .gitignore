@@ -1,0 +1,13 @@
+build
+crx-hmr.js
+sideYT.zip
+.vscode
+.TODO
+build.sh
+jsconfig.json
+_metadata
+
+# zip -r sideYT.zip  build
+
+
+

@@ -1,0 +1,10 @@
+{
+	"extName": {
+		"message": "sideYT - Youtube in side panel",
+		"description": "Extension name"
+	},
+	"extDescription": {
+		"message": "Open Youtube in side panel. Open source",
+		"description": "Extension description"
+	}
+}

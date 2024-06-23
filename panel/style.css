@@ -1,0 +1,7 @@
+html {
+	scrollbar-width: thin;
+
+	&[darker-dark-theme] {
+		scrollbar-color: gray black;
+	}
+}
